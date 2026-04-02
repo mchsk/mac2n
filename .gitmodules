@@ -1,0 +1,3 @@
+[submodule "n2n-src"]
+	path = n2n-src
+	url = https://github.com/ntop/n2n.git

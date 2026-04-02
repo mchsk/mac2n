@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Editor / IDE
+.cursor/
+.vscode/
+*.swp
+*.swo
+*~
+
+# n2n build artifacts (inside submodule)
+n2n-src/edge
+n2n-src/supernode
+n2n-src/build/
+n2n-src/*.o
+n2n-src/*.a
+n2n-src/*.gcno
+n2n-src/*.gcda
+n2n-src/Makefile
+n2n-src/config.*
+n2n-src/autom4te.cache/
+.githooks/

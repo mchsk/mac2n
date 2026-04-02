@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  N2N Supernode LaunchDaemon — TEMPLATE
+
+  Edit the port and federation name as needed before installing.
+  Recommended: use ./wizard.sh to generate a configured plist automatically.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>org.ntop.n2n-supernode</string>
+
+    <key>UserName</key>
+    <string>root</string>
+
+    <key>GroupName</key>
+    <string>wheel</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/sbin/supernode</string>
+        <string>-p</string>
+        <string>7777</string>
+        <string>-f</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+
+    <key>ThrottleInterval</key>
+    <integer>10</integer>
+
+    <key>ExitTimeOut</key>
+    <integer>10</integer>
+
+    <key>StandardOutPath</key>
+    <string>/var/log/n2n-supernode.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/var/log/n2n-supernode.log</string>
+</dict>
+</plist>

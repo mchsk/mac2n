@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  N2N Edge LaunchDaemon — TEMPLATE
+
+  NOTE: This is a reference template. The wizard.sh script generates
+  instance-specific plists automatically. You do NOT need to edit this file.
+
+  If using manually:
+    1. Replace community name, encryption key, VPN IP, and supernode address
+    2. Never commit this file with real credentials to version control
+    3. Copy to /Library/LaunchDaemons/org.ntop.n2n-edge.<name>.plist
+
+  Recommended: use ./wizard.sh create <name> instead.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>org.ntop.n2n-edge.INSTANCE_NAME</string>
+
+    <key>UserName</key>
+    <string>root</string>
+
+    <key>GroupName</key>
+    <string>wheel</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/sbin/edge</string>
+        <string>-c</string>
+        <string>CHANGE_ME_community</string>
+        <string>-k</string>
+        <string>CHANGE_ME_secret</string>
+        <string>-a</string>
+        <string>static:10.0.0.1/24</string>
+        <string>-l</string>
+        <string>CHANGE_ME_supernode:7777</string>
+        <string>-A3</string>
+        <string>-f</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+
+    <key>ThrottleInterval</key>
+    <integer>10</integer>
+
+    <key>ExitTimeOut</key>
+    <integer>10</integer>
+
+    <key>StandardOutPath</key>
+    <string>/var/log/n2n-edge-INSTANCE_NAME.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/var/log/n2n-edge-INSTANCE_NAME.log</string>
+</dict>
+</plist>
